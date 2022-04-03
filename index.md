@@ -7,6 +7,8 @@ The novel digital twin solution that has been designed and prototyped within thi
 
 ## Problem statement 
 Public and private authorities that manage large infrastructure projects have a responsibility and vested interest in maintaining the longevity of their assets. The structural health monitoring (SHM) methodologies which are applied to these projects conventionally prioritise minimal service disruption, efficient resource allocation and a reduction in the degree of operational risk. The value provided by effective structural health monitoring systems cannot be overstated. In the United States, there are 625,000 bridges listed by the Department of Transportation, 30 percent of which have been officially classified as structurally deficient or functionally obsolete. Furthermore, a 2001 BRIME report concluded that across three different European countries (France, Germany and the UK), deficiencies within highway bridges were present at rates of 39%, 30% and 37% respectively. 
+![](https://github.com/thie7042/Tommy_Portfolio/blob/main/Images/Sensor%20Installation.png)
+
 ![](https://github.com/thie7042/Tommy_Portfolio/blob/gh-pages/Images/Sensor%20Installation.png)
 ![](https://github.com/thie7042/Tommy_Portfolio/blob/gh-pages/Images/Global%20SHM%20Stats.PNG)
 ![](https://github.com/thie7042/Tommy_Portfolio/blob/gh-pages/Images/Global%20SHM%20Stats.png)
