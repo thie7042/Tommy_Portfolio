@@ -35,7 +35,7 @@ Within the scope of this research project, four machine learning models were ana
 ![](/Images/Hypertune.png)
 
 ## Neural Network
-Across all of the tested statistical metrics (Gaussian distribution of errors, mean absolute error (MAE), mean squared error (MSE) root mean squared error (RMSE) and the coefficient of determination), the artificial neural network generated the most robust and consistent baseline strain datasets, allowing the digital twin to accurately visualise the footbridges structural response to loading. This analysis includes the derived strain, bending moment and deflection induced within the footbridge when subject to mechanical loading events. The implementation of an artificial neural network has been modelled to forecast baseline strain behaviour as influenced by temperature variance, captured from embedded strain and temperature sensors.
+Across all of the tested statistical metrics (Gaussian distribution of errors, mean absolute error (MAE), mean squared error (MSE), root mean squared error (RMSE) and the coefficient of determination), the artificial neural network generated the most robust and consistent baseline strain datasets, allowing the digital twin to accurately visualise the footbridges structural response to loading. This analysis includes the derived strain, bending moment and deflection induced within the footbridge when subject to mechanical loading events. The implementation of an artificial neural network has been modelled to forecast baseline strain behaviour as influenced by temperature variance, captured from embedded strain and temperature sensors.
 
 ![](/Images/ANN.png)
 
