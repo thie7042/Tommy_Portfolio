@@ -10,7 +10,7 @@ This is a brief catalogue outlining my previous and ongoing research projects. F
 ## Project brief
 The novel digital twin solution that has been designed and prototyped within this research project aims to demonstrate a holistic, end-to-end fibre optic structural health monitoring strategy that integrates embedded Fibre Bragg Grating sensors, open-source software and fundamental machine learning modelling techniques. Through a collaborative partnership between Laing O’Rourke and The University of Sydney, a series of 64 fibre optic sensors and 8 temperature sensors have been embedded internally within a footbridge located in the Engineering and Technology Precinct (ETP) to continuously measure and collect structural data. These datasets have been leveraged to train a series of machine learning models and develop an integrated digital twin prototype as a collective monitoring solution.
 
-![](/Images/ETP_Bridge.png)
+![](/Images/ETP_Bridge.PNG)
 
 <div align="center"> The ETP footbridge, Sydney University
 </div>
