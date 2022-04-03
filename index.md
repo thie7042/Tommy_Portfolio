@@ -17,9 +17,11 @@ From the various models investigated within this research, the artificial neural
 
 <p align="center">
   ![](https://github.com/thie7042/Tommy_Portfolio/blob/main/Images/Sensor%20Installation.png)
+  
   **Sensor installation at ETP during construction**
 
   ![](https://github.com/thie7042/Tommy_Portfolio/blob/main/Images/ANN%20strain%20prediction.png)
+  
   **Demonstration of ANN strain prediction**
 </p>
 
