@@ -16,13 +16,11 @@ Traditional techniques of non-destructive evaluation (NDE) for the monitoring of
 From the various models investigated within this research, the artificial neural network generated the most robust and consistent baseline strain datasets, allowing the digital twin to accurately visualise the footbridges structural response to loading. This analysis includes the derived strain, bending moment and deflection induced within the footbridge when subject to mechanical loading events. The implementation of an artificial neural network has been modelled to forecast baseline strain behaviour as influenced by temperature variance, captured from embedded strain and temperature sensors
 
 <p align="center">
-  
-![](https://github.com/thie7042/Tommy_Portfolio/blob/main/Images/Sensor%20Installation.png)
-**Sensor installation at ETP during construction**
+  ![](https://github.com/thie7042/Tommy_Portfolio/blob/main/Images/Sensor%20Installation.png)
+  **Sensor installation at ETP during construction**
 
-![](https://github.com/thie7042/Tommy_Portfolio/blob/main/Images/ANN%20strain%20prediction.png)
-**Bold** and _Italic_ and `Code` text
-Demonstration of ANN strain prediction 
+  ![](https://github.com/thie7042/Tommy_Portfolio/blob/main/Images/ANN%20strain%20prediction.png)
+  **Demonstration of ANN strain prediction**
 </p>
 
 ## Digital twin solution
