@@ -11,7 +11,7 @@ Public and private authorities that manage large infrastructure projects have a 
 
 ![](/Images/Sensor%20Installation.png)
 ![](/Images/Global%20SHM%20Stats.PNG)
-![](/Images/Global_SHM_Stats.png)
+![](/Images/Global_SHM_Stats.PNG)
 Traditional techniques of non-destructive evaluation (NDE) for the monitoring of these assets have also been severely limited to routine visual examinations which are unable to provide continuous information into the long-term behaviour of these structures. A technical report published by the U.S Federal Highway administration concluded that 58% of sample average condition ratings for tested structural elements were assigned incorrectly.  These inaccurate evaluation techniques result in economically impractical maintenance schedules and uninformed resource allocation for asset management at an industry scale. The accumulative effects of stagnant industry practices and mass structural deterioration pose a significant risk to the built environment, with the potential to produce a marked decline in serviceability over time.
 
 ## Neural Network
