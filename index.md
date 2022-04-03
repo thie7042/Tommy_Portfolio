@@ -9,16 +9,16 @@ The novel digital twin solution that has been designed and prototyped within thi
 Public and private authorities that manage large infrastructure projects have a responsibility and vested interest in maintaining the longevity of their assets. The structural health monitoring (SHM) methodologies which are applied to these projects conventionally prioritise minimal service disruption, efficient resource allocation and a reduction in the degree of operational risk. The value provided by effective structural health monitoring systems cannot be overstated. In the United States, there are 625,000 bridges listed by the Department of Transportation, 30 percent of which have been officially classified as structurally deficient or functionally obsolete. Furthermore, a 2001 BRIME report concluded that across three different European countries (France, Germany and the UK), deficiencies within highway bridges were present at rates of 39%, 30% and 37% respectively. 
 ![](https://github.com/thie7042/Tommy_Portfolio/blob/main/Images/Sensor%20Installation.png)
 
-![](https://github.com/thie7042/Tommy_Portfolio/blob/gh-pages/Images/Sensor%20Installation.png)
-![](https://github.com/thie7042/Tommy_Portfolio/blob/gh-pages/Images/Global%20SHM%20Stats.PNG)
-![](https://github.com/thie7042/Tommy_Portfolio/blob/gh-pages/Images/Global%20SHM%20Stats.png)
+![](/Images/Sensor%20Installation.png)
+![](/Images/Global%20SHM%20Stats.PNG)
+![](/Images/Global_SHM_Stats.png)
 Traditional techniques of non-destructive evaluation (NDE) for the monitoring of these assets have also been severely limited to routine visual examinations which are unable to provide continuous information into the long-term behaviour of these structures. A technical report published by the U.S Federal Highway administration concluded that 58% of sample average condition ratings for tested structural elements were assigned incorrectly.  These inaccurate evaluation techniques result in economically impractical maintenance schedules and uninformed resource allocation for asset management at an industry scale. The accumulative effects of stagnant industry practices and mass structural deterioration pose a significant risk to the built environment, with the potential to produce a marked decline in serviceability over time.
 
 ## Neural Network
 From the various models investigated within this research, the artificial neural network generated the most robust and consistent baseline strain datasets, allowing the digital twin to accurately visualise the footbridges structural response to loading. This analysis includes the derived strain, bending moment and deflection induced within the footbridge when subject to mechanical loading events. The implementation of an artificial neural network has been modelled to forecast baseline strain behaviour as influenced by temperature variance, captured from embedded strain and temperature sensors
 
 
-  ![](https://github.com/thie7042/Tommy_Portfolio/blob/main/Images/Sensor%20Installation.png)
+  ![](/Images/Sensor%20Installation.png)
   
   **Sensor installation at ETP during construction**
 
