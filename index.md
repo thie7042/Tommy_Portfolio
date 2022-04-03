@@ -26,7 +26,7 @@ From the various models investigated within this research, the artificial neural
 <p class="text-center"><!-- ANN strain prediction --></p>
 
 ## Digital Twin UI
-In order to mobilise the adoption of FOS sensor technology within the structural health monitoring industry, this framework was designed as an intuitive, user friendly and insightful tool that can be integrated within the workflow of site engineers, asset inspectors and project managers. The Unity Digital twin prototype was programmed with the objective of communicating significant quantities of Big data to provide actionable insights into the structural response of an asset under load, including the incude strain, bending moment and deflection. 
+In order to mobilise the adoption of FOS sensor technology within the structural health monitoring industry, this framework was designed as an intuitive, user friendly and insightful tool that can be integrated within the workflow of site engineers, asset inspectors and project managers. The Unity Digital twin prototype was programmed with the objective of communicating significant quantities of Big data to provide actionable insights into the structural response of an asset under load, including the induced strain, bending moment and deflection. 
 
 ![](/Images/Unity_UI.png)
 
