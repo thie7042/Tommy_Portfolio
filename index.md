@@ -30,7 +30,7 @@ From the various models investigated within this research, the artificial neural
 
 <div align="center"> Sensor installation at ETP during construction
   
-![](/Images/ANN strain prediction.png)
+![](/Images/ANN_strain_prediction.png)
 
 <div align="center"> ANN strain prediction
   
