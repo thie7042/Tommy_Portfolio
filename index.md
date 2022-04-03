@@ -6,7 +6,10 @@ This is a brief catalogue outlining my previous and ongoing research projects. F
 ## Project brief
 The novel digital twin solution that has been designed and prototyped within this research project aims to demonstrate a holistic, end-to-end fibre optic structural health monitoring strategy that integrates embedded Fibre Bragg Grating sensors, open-source software and fundamental machine learning modelling techniques. Through a collaborative partnership between Laing O’Rourke and The University of Sydney, a series of 64 fibre optic sensors and 8 temperature sensors have been embedded internally within a footbridge located in the Engineering and Technology Precinct (ETP) to continuously measure and collect structural data. These datasets have been leveraged to train a series of machine learning models and develop an integrated digital twin prototype as a collective monitoring solution.
 
-https://user-images.githubusercontent.com/82189351/161425088-abafe22b-098b-48ce-999b-8747f1fcdf7a.mp4
+
+[![Alternate Text]({image-url})]({https://user-images.githubusercontent.com/82189351/161425088-abafe22b-098b-48ce-999b-8747f1fcdf7a.mp4} "Link Title")
+<video src="https://user-images.githubusercontent.com/82189351/161425088-abafe22b-098b-48ce-999b-8747f1fcdf7a.mp4" width="900">
+
 
 ## Problem statement 
 Public and private authorities that manage large infrastructure projects have a responsibility and vested interest in maintaining the longevity of their assets. The structural health monitoring (SHM) methodologies which are applied to these projects conventionally prioritise minimal service disruption, efficient resource allocation and a reduction in the degree of operational risk. The value provided by effective structural health monitoring systems cannot be overstated. In the United States, there are 625,000 bridges listed by the Department of Transportation, 30 percent of which have been officially classified as structurally deficient or functionally obsolete. Furthermore, a 2001 BRIME report concluded that across three different European countries (France, Germany and the UK), deficiencies within highway bridges were present at rates of 39%, 30% and 37% respectively. 
