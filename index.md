@@ -22,17 +22,35 @@ Public and private authorities that manage large infrastructure projects have a 
 
 Traditional techniques of non-destructive evaluation (NDE) for the monitoring of these assets have also been severely limited to routine visual examinations which are unable to provide continuous information into the long-term behaviour of these structures. A technical report published by the U.S Federal Highway administration concluded that 58% of sample average condition ratings for tested structural elements were assigned incorrectly.  These inaccurate evaluation techniques result in economically impractical maintenance schedules and uninformed resource allocation for asset management at an industry scale. The accumulative effects of stagnant industry practices and mass structural deterioration pose a significant risk to the built environment, with the potential to produce a marked decline in serviceability over time.
 
-## Neural Network
-From the various models investigated within this research, the artificial neural network generated the most robust and consistent baseline strain datasets, allowing the digital twin to accurately visualise the footbridges structural response to loading. This analysis includes the derived strain, bending moment and deflection induced within the footbridge when subject to mechanical loading events. The implementation of an artificial neural network has been modelled to forecast baseline strain behaviour as influenced by temperature variance, captured from embedded strain and temperature sensors
+## Data collection
+During the construction of the footbridge, six FBG strain arrays containing 16 sensors at 1.0 m spacing were installed with a spatial resolution of 6.2 mm and a strain resolution of 2 µε. These arrays were fixed to the longitudinal rebar at the bottom and top portions of the concrete slab. Additional arrays were attached along the top surface of the post-tensioning duct as an intermediary reference to evaluate the accuracy of the recorded data. Temperature sensor arrays containing 4 sensors at 5.0 m spacing were also embedded within the footbridge along the top and bottom longitudinal rebar to account for the effects of thermal variation. The installed sensors were linked to a secure interrogator system located on site, with transmitted signals periodically set at 10 second increments to simplify the data architecture and workflow used in this prototype. This signal rate was modified to 1 second increments during the loading experiment to increase the resolution of the structural analysis, before being returned to a 10 second acquisition rate for sustainable long-term data collection & monitoring. 
 
 ![](/Images/Sensor_Installation.png)
 
 <div align="center"> Sensor installation at ETP during construction
 </div>
+## Tested Models
+Within the scope of this research project, four machine learning models were analysed: linear regression, ridge regression, lasso regression and an artificial neural network (ANN). These techniques provided a broad spectrum of complexity and hyperparameter diversity, allowing for the identification of a suitable machine learning model that best describes the temperature-strain relationship. For the selection of suitable hyperparameters, 10-fold CV & exhaustive grid-search were used. Hyperparameters which yielded the smallest model error were retained, allowing for the performance of optimised machine learning models to be directly compared against one another.
+
+![](/Images/Hypertune.png)
+
+## Neural Network
+Across all of the tested statistical metrics (Gaussian distribution of errors, mean absolute error (MAE), mean squared error (MSE) root mean squared error (RMSE) and the coefficient of determination), the artificial neural network generated the most robust and consistent baseline strain datasets, allowing the digital twin to accurately visualise the footbridges structural response to loading. This analysis includes the derived strain, bending moment and deflection induced within the footbridge when subject to mechanical loading events. The implementation of an artificial neural network has been modelled to forecast baseline strain behaviour as influenced by temperature variance, captured from embedded strain and temperature sensors.
+
 ![](/Images/ANN.png)
 
 <div align="center"> ANN strain prediction
 </div>
+
+![](/Images/Norm.png)
+
+<div align="center"> Gaussian error distribution
+</div>
+
+![](/Images/Stats.png)
+<div align="center"> Statistical model comparison
+</div>
+
 ## Digital Twin UI
 In order to mobilise the adoption of FOS sensor technology within the structural health monitoring industry, this framework was designed as an intuitive, user friendly and insightful tool that can be integrated within the workflow of site engineers, asset inspectors and project managers. The Unity Digital twin prototype was programmed with the objective of communicating significant quantities of Big data to provide actionable insights into the structural response of an asset under load, including the induced strain, bending moment and deflection. 
 
