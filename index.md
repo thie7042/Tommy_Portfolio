@@ -1,47 +1,9 @@
-## Tommy Hielscher
+# Project portfolio
+This is a brief catalogue outlining my previous and ongoing research projects. For more information, feel free to reach out to me directly at thie7042@uni.sydney.edu.au , or message me on [Linkedin](https://www.linkedin.com/in/tommy-hielscher-4a40771b6/).
 
-
-# Tommy_Portfolio
-Portfolio of works
 
 # Bayesian_GP_Proxy
 Bayesian Optimization with Gaussian Process 
-* Current research: Applying Bayesian Optimization with GP to create a proxy model of computationally expensive Finite Element simulations 
+* Current research: Applying Bayesian Optimization with GP to create a proxy model of computationally expensive Finite Element simulations.
 * See "Master" branch for development works. This project is currently in progress, with updates to come in the following months.
 
-
-You can use the [editor on GitHub](https://github.com/thie7042/Tommy_Portfolio/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/thie7042/Tommy_Portfolio/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
