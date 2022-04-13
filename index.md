@@ -58,6 +58,28 @@ In order to mobilise the adoption of FOS sensor technology within the structural
 
 
 # Bayesian Optimization with Gaussian Process 
+
+## Context: Locating the maxima
+
+![](/Images/Target_Function.png)
+
+
+## Context: Building the covariance matrix
+
+![](/Images/Covariance.png)
+
+## Context: Sampling the Prior
+
+![](/Images/Prior_sampling.png)
+
+## Context: Creating the surrogate model
+
+![](/Images/Proxy_model.png)
+
+## Context: Optimizing the acquisition function
+
+![](/Images/Steps.png)
+
 * Current research: Applying Bayesian Optimization with GP to create a proxy model of computationally expensive Finite Element simulations.
 * See "Master" branch for development works. This project is currently in progress, with updates to come in the following months.
 
