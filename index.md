@@ -88,7 +88,6 @@ In order to mobilise the adoption of FOS sensor technology within the structural
 
 Parametric Master File:
 ```python
-# Save by TommyHielscher on 2022_04_12-13.19.16; build 2021 2020_03_07-01.50.37 167380
 from part import *
 from material import *
 from section import *
@@ -103,22 +102,22 @@ from sketch import *
 from visualization import *
 from connectorBehavior import *
 
-
 session.journalOptions.setValues(replayGeometry=COORDINATE, recoverGeometry=COORDINATE)
 
 # ====================== Define parameters ====================== 
-T_width = 300
-
-
+T_Width = 300
+Base_Height = 500
+Flange_Thickness = 150
+Flange_Width = 350
+Rebar_Spacing = 250
+Rebar_Offset = 200
+Rebar_Thickness = 10
 
 # ====================== Create Model ====================== 
 #mdb.saveAs(pathName='C:/Users/TommyHielscher/Desktop/Abaqus_scripting/ReinforcedTBeam/TBeam.cae')
-
 mdb.Model(modelType=STANDARD_EXPLICIT, name='TBEAM')
 
-
 # ====================== Define Cross section ====================== 
-
 mdb.models['TBEAM'].ConstrainedSketch(name='__profile__', sheetSize=2000.0)
 # mdb.models['TBEAM'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
   #  0.0, 300.0))
@@ -133,7 +132,6 @@ mdb.models['TBEAM'].sketches['__profile__'].geometry.findAt((150.0, 0.0))
 mdb.models['TBEAM'].sketches['__profile__'].HorizontalConstraint(addUndoState=
     False, entity=mdb.models['TBEAM'].sketches['__profile__'].geometry.findAt((
     150.0, 0.0), ))
-    
 mdb.models['TBEAM'].sketches['__profile__'].Line(point1=(300.0, 0.0), point2=(
     300.0, 500.0))
 mdb.models['TBEAM'].sketches['__profile__'].geometry.findAt((300.0, 250.0))
@@ -233,10 +231,7 @@ mdb.models['TBEAM'].parts['TBEAM'].BaseSolidExtrude(depth=5000.0, sketch=
     mdb.models['TBEAM'].sketches['__profile__'])
 del mdb.models['TBEAM'].sketches['__profile__']
 
-# Save by TommyHielscher on 2022_04_12-13.27.34; build 2021 2020_03_07-01.50.37 167380
-
 # ====================== Partitioning ====================== 
-
 mdb.models['TBEAM'].parts['TBEAM'].PartitionCellByExtendFace(cells=
     mdb.models['TBEAM'].parts['TBEAM'].cells.findAt(((-350.0, 550.0, 
     3333.333333), )), extendFace=
@@ -260,7 +255,6 @@ mdb.models['TBEAM'].parts['TBEAM'].PartitionCellByDatumPlane(cells=
     3333.333333), ), ((100.0, 0.0, 3333.333333), ), ), datumPlane=
     mdb.models['TBEAM'].parts['TBEAM'].datums[3])
     
-    
 # ====================== Create Longitudinal Rebar ====================== 
 mdb.models['TBEAM'].parts['TBEAM'].PartitionCellByDatumPlane(cells=
     mdb.models['TBEAM'].parts['TBEAM'].cells.findAt(((533.333333, 500.0, 
@@ -278,12 +272,8 @@ mdb.models['TBEAM'].Part(dimensionality=THREE_D, name='LongBar', type=
 mdb.models['TBEAM'].parts['LongBar'].BaseWire(sketch=
     mdb.models['TBEAM'].sketches['__profile__'])
 del mdb.models['TBEAM'].sketches['__profile__']
-# Save by TommyHielscher on 2022_04_12-13.37.58; build 2021 2020_03_07-01.50.37 167380
 
-
-    
 # ====================== Create Stirrup ====================== 
-
 mdb.models['TBEAM'].ConstrainedSketch(name='__profile__', sheetSize=2000.0)
 mdb.models['TBEAM'].sketches['__profile__'].rectangle(point1=(25.0, 25.0), 
     point2=(275.0, 625.0))
@@ -292,11 +282,7 @@ mdb.models['TBEAM'].Part(dimensionality=THREE_D, name='STIRRUPS', type=
 mdb.models['TBEAM'].parts['STIRRUPS'].BaseWire(sketch=
     mdb.models['TBEAM'].sketches['__profile__'])
 del mdb.models['TBEAM'].sketches['__profile__']
-# Save by TommyHielscher on 2022_04_12-13.43.45; build 2021 2020_03_07-01.50.37 167380
 
-
-
-    
 # ====================== Create Transverse Bar ====================== 
 mdb.models['TBEAM'].ConstrainedSketch(name='__profile__', sheetSize=2000.0)
 mdb.models['TBEAM'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
@@ -310,9 +296,6 @@ mdb.models['TBEAM'].Part(dimensionality=THREE_D, name='TransvsBAR', type=
 mdb.models['TBEAM'].parts['TransvsBAR'].BaseWire(sketch=
     mdb.models['TBEAM'].sketches['__profile__'])
 del mdb.models['TBEAM'].sketches['__profile__']
-
-
-
 
 # ====================== Create Material Properties ====================== 
 mdb.models['TBEAM'].Material(name='Steel')
@@ -364,19 +347,11 @@ mdb.models['TBEAM'].materials['Concrete'].concreteDamagedPlasticity.ConcreteTens
     (0.829245, 0.001522), (0.845512, 0.00172), (0.858746, 0.001917)))
 mdb.models['TBEAM'].HomogeneousSolidSection(material='Concrete', name=
     'Concrete', thickness=None)
-    
 mdb.models['TBEAM'].TrussSection(area=50.24, material='Steel', name=
     'SteelRebar')
-    
-    
-    
-    
-    
-    
 mdb.models['TBEAM'].parts['LongBar'].Set(edges=
     mdb.models['TBEAM'].parts['LongBar'].edges.findAt(((1250.0, 0.0, 0.0), )), 
     name='Set-1')
-    
 mdb.models['TBEAM'].parts['LongBar'].SectionAssignment(offset=0.0, offsetField=
     '', offsetType=MIDDLE_SURFACE, region=
     mdb.models['TBEAM'].parts['LongBar'].sets['Set-1'], sectionName=
@@ -406,9 +381,7 @@ mdb.models['TBEAM'].parts['TransvsBAR'].Set(edges=
 mdb.models['TBEAM'].parts['TransvsBAR'].SectionAssignment(offset=0.0, 
     offsetField='', offsetType=MIDDLE_SURFACE, region=
     mdb.models['TBEAM'].parts['TransvsBAR'].sets['Set-1'], sectionName=
-    'SteelRebar', thicknessAssignment=FROM_SECTION)
-    
-    
+    'SteelRebar', thicknessAssignment=FROM_SECTION)  
 mdb.models['TBEAM'].rootAssembly.DatumCsysByDefault(CARTESIAN)
 mdb.models['TBEAM'].rootAssembly.Instance(dependent=ON, name='LongBar-1', part=
     mdb.models['TBEAM'].parts['LongBar'])
@@ -418,8 +391,6 @@ mdb.models['TBEAM'].rootAssembly.Instance(dependent=ON, name='TBEAM-1', part=
     mdb.models['TBEAM'].parts['TBEAM'])
 mdb.models['TBEAM'].rootAssembly.Instance(dependent=ON, name='TransvsBAR-1', 
     part=mdb.models['TBEAM'].parts['TransvsBAR'])
-    
-    
     
 # ====================== Translations ====================== 
 mdb.models['TBEAM'].rootAssembly.instances['STIRRUPS-1'].translate(vector=(0.0, 
@@ -441,7 +412,6 @@ mdb.models['TBEAM'].rootAssembly.DatumPointByOffset(point=
 mdb.models['TBEAM'].rootAssembly.translate(instanceList=('LongBar-1', ), 
     vector=(600.0, 50.0, -160.0))
     
-    
 # ====================== Copy to create pattern (Longitudinal Rebar) ====================== 
 mdb.models['TBEAM'].rootAssembly.LinearInstancePattern(direction1=(-1.0, 0.0, 
     0.0), direction2=(0.0, 1.0, 0.0), instanceList=('LongBar-1', ), number1=3, 
@@ -450,18 +420,12 @@ mdb.models['TBEAM'].rootAssembly.LinearInstancePattern(direction1=(-1.0, 0.0,
 # ====================== Copy to create pattern (Stirrups) ====================== 
 mdb.models['TBEAM'].rootAssembly.LinearInstancePattern(direction1=(0.0, 0.0, 
     1.0), direction2=(0.0, 1.0, 0.0), instanceList=('STIRRUPS-1', ), number1=26
-    , number2=1, spacing1=200.0, spacing2=600.0)
-    
-    
+    , number2=1, spacing1=200.0, spacing2=600.0)  
 del mdb.models['TBEAM'].rootAssembly.features['STIRRUPS-1']
 del mdb.models['TBEAM'].rootAssembly.features['STIRRUPS-1-lin-26-1']
-
-
 mdb.models['TBEAM'].rootAssembly.translate(instanceList=('TransvsBAR-1', ), 
     vector=(-1150.0, 625.0, 200.0))
     
-    
-
 # ====================== Copy to create pattern (Transverse bars ====================== 
 mdb.models['TBEAM'].rootAssembly.LinearInstancePattern(direction1=(0.0, 0.0, 
     1.0), direction2=(0.0, 1.0, 0.0), instanceList=('TransvsBAR-1', ), number1=
@@ -474,11 +438,8 @@ mdb.models['TBEAM'].rootAssembly.LinearInstancePattern(direction1=(-1.0, 0.0,
 mdb.models['TBEAM'].rootAssembly.LinearInstancePattern(direction1=(1.0, 0.0, 
     0.0), direction2=(0.0, 1.0, 0.0), instanceList=('LongBar-1-lin-1-2', ), 
     number1=2, number2=2, spacing1=200.0, spacing2=1.0)
-# Save by TommyHielscher on 2022_04_12-14.37.03; build 2021 2020_03_07-01.50.37 167380
-
 
 # ====================== Apply Boundary Conditions (Pinned & Roller) ====================== 
-
 mdb.models['TBEAM'].rootAssembly.Set(edges=
     mdb.models['TBEAM'].rootAssembly.instances['TBEAM-1'].edges.findAt(((
     5585.0, 0.0, 200.0), )), name='Set-1')
@@ -493,12 +454,8 @@ mdb.models['TBEAM'].DisplacementBC(amplitude=UNSET, createStepName='Initial',
     distributionType=UNIFORM, fieldName='', localCsys=None, name='Roller', 
     region=mdb.models['TBEAM'].rootAssembly.sets['Set-2'], u1=SET, u2=SET, u3=
     UNSET, ur1=UNSET, ur2=UNSET, ur3=UNSET)
-# Save by TommyHielscher on 2022_04_12-14.50.52; build 2021 2020_03_07-01.50.37 167380
-
 
 # ====================== Apply Pressure ====================== 
-
-
 mdb.models['TBEAM'].StaticStep(name='Step-1', previous='Initial')
 mdb.models['TBEAM'].rootAssembly.Surface(name='Surf-1', side1Faces=
     mdb.models['TBEAM'].rootAssembly.instances['TBEAM-1'].faces.findAt(((
@@ -508,21 +465,13 @@ mdb.models['TBEAM'].rootAssembly.Surface(name='Surf-1', side1Faces=
 mdb.models['TBEAM'].Pressure(amplitude=UNSET, createStepName='Step-1', 
     distributionType=UNIFORM, field='', magnitude=10.0e-6, name='Load-1', region=
     mdb.models['TBEAM'].rootAssembly.surfaces['Surf-1'])
-# Save by TommyHielscher on 2022_04_12-14.57.21; build 2021 2020_03_07-01.50.37 167380
-# Save by TommyHielscher on 2022_04_12-14.57.23; build 2021 2020_03_07-01.50.37 167380
-
 
 # ====================== Select Output ====================== 
-
-
 mdb.models['TBEAM'].fieldOutputRequests['F-Output-1'].setValues(variables=('S', 
     'PE', 'PEEQ', 'PEMAG', 'LE', 'U', 'RF', 'CF', 'CSTRESS', 'CDISP', 
     'DAMAGEC', 'DAMAGET'))
-    
 
 # ====================== Set constraints (embedded region) ====================== 
-
-
 mdb.models['TBEAM'].rootAssembly.Set(edges=
     mdb.models['TBEAM'].rootAssembly.instances['LongBar-1'].edges.findAt(((
     5760.0, 50.0, 3750.0), ), )+\
@@ -679,11 +628,8 @@ mdb.models['TBEAM'].EmbeddedRegion(absoluteTolerance=0.0, embeddedRegion=
     mdb.models['TBEAM'].rootAssembly.sets['m_Set-3'], fractionalTolerance=0.05, 
     hostRegion=mdb.models['TBEAM'].rootAssembly.sets['s_Set-3'], name=
     'Constraint-1', toleranceMethod=BOTH, weightFactorTolerance=1e-06)
-# Save by TommyHielscher on 2022_04_12-15.03.51; build 2021 2020_03_07-01.50.37 167380
-
 
 # ====================== Create Mesh ====================== 
-
 mdb.models['TBEAM'].parts['LongBar'].seedPart(deviationFactor=0.1, 
     minSizeFactor=0.1, size=50.0)
 mdb.models['TBEAM'].parts['LongBar'].generateMesh()
@@ -696,12 +642,8 @@ mdb.models['TBEAM'].parts['TBEAM'].generateMesh()
 mdb.models['TBEAM'].parts['TransvsBAR'].seedPart(deviationFactor=0.1, 
     minSizeFactor=0.1, size=50.0)
 mdb.models['TBEAM'].parts['TransvsBAR'].generateMesh()
-# Save by TommyHielscher on 2022_04_12-15.11.59; build 2021 2020_03_07-01.50.37 167380
-
-
 
 # ====================== Set Element Type ====================== 
-
 mdb.models['TBEAM'].parts['TransvsBAR'].setElementType(elemTypes=(ElemType(
     elemCode=T3D2, elemLibrary=STANDARD), ), regions=(
     mdb.models['TBEAM'].parts['TransvsBAR'].edges.findAt(((250.0, 0.0, 0.0), 
@@ -725,12 +667,8 @@ mdb.models['TBEAM'].parts['TBEAM'].setElementType(elemTypes=(ElemType(
     133.333333), ), ((200.0, 333.333333, 5000.0), ), ((300.0, 333.333333, 
     4033.333333), ), ((416.666667, 500.0, 4866.666667), ), ((-233.333333, 
     500.0, 966.666667), ), ((533.333333, 500.0, 4033.333333), ), ), ))
-# Save by TommyHielscher on 2022_04_12-15.21.43; build 2021 2020_03_07-01.50.37 167380
-
-
 
 # ====================== Create Job ====================== 
-
 mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
     explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
     memory=90, memoryUnits=PERCENTAGE, model='TBEAM', modelPrint=OFF, 
@@ -739,9 +677,8 @@ mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF,
     '', type=ANALYSIS, userSubroutine='', waitHours=0, waitMinutes=0)
 # Save by TommyHielscher on 2022_04_12-15.08.22; build 2021 2020_03_07-01.50.37 167380
 
-
 # ====================== Submit Job ====================== 
-
 #mdb.models['TBEAM'].rootAssembly.regenerate()
 mdb.jobs['TBEAM'].submit(consistencyChecking=OFF)
+# Save by TommyHielscher on 2022_04_12-13.19.16; build 2021 2020_03_07-01.50.37 167380
 ```
