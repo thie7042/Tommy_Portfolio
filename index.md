@@ -141,13 +141,6 @@ mdb.Model(modelType=STANDARD_EXPLICIT, name='TBEAM')
 
 # ====================== Define Cross section ====================== 
 mdb.models['TBEAM'].ConstrainedSketch(name='__profile__', sheetSize=2000.0)
-# mdb.models['TBEAM'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
-  #  0.0, 300.0))
-# mdb.models['TBEAM'].sketches['__profile__'].geometry.findAt((0.0, 150.0))
-# mdb.models['TBEAM'].sketches['__profile__'].VerticalConstraint(addUndoState=
-    # False, entity=mdb.models['TBEAM'].sketches['__profile__'].geometry.findAt((
-    # 0.0, 150.0), ))
-# mdb.models['TBEAM'].sketches['__profile__'].undo()
 mdb.models['TBEAM'].sketches['__profile__'].Line(point1=(0.0, 0.0), point2=(
     300.0, 0.0))
 mdb.models['TBEAM'].sketches['__profile__'].geometry.findAt((150.0, 0.0))
