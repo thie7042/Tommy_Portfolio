@@ -68,7 +68,7 @@ Surrogates must satisfy four distinct criteria in order to justify their impleme
 
 ## Context: Locating the maxima
 In order to introduce the process of Bayesian Optimization, I have created a simple visualisation of the process as applied to a one-dimensional problem.
-Within this context, the target function which we are attempting to replicate is f(x) = x/5 + sin(x). The optimal solution which we are attempting to derive is marked in red on the plot. 
+Within this context, the target function which we are attempting to replicate is f(x) = x/5 + xsin(x). The optimal solution which we are attempting to derive is marked in red on the plot. 
 
 ![](/Images/Target_Function.png)
 
