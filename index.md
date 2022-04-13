@@ -73,9 +73,14 @@ Within this context, the target function which we are attempting to replicate is
 ![](/Images/Target_Function.png)
 
 ## Context: Building the covariance matrix
-The covariance matrix Σ provides information regarding the variance 2 of each random variable, constructing the diagonal entries of the matrix, and the covariance between random variables, provided at all non-diagonal entries. In order to visualize the covariance matrix for larger dimensions, it has been plotted in the form of 
+The covariance matrix Σ provides information regarding the variance of each random variable, constructing the diagonal entries of the matrix, and the covariance between random variables, provided at all non-diagonal entries. In order to visualize the covariance matrix for larger dimensions, it has been plotted in the form of 
 a relative-scale heat-map, with each block representing an entry within the matrix.
+
 ![](/Images/Covariance.png)
+
+The kernel function K(x1,x2) that has been used throughout this demonstration is a stationary kernel that is commonly referred to as the Radial-basis function (RBF) kernel, Gaussian kernel or the “squared exponential” kernel function. Within this context, the kernel function and covariance matrix are defined by the following equations;
+
+![](/Images/Kernel.png)
 
 ## Context: Sampling the Prior
 
@@ -86,20 +91,24 @@ a relative-scale heat-map, with each block representing an entry within the matr
 ![](/Images/Proxy_model.png)
 
 ## Context: Optimizing the acquisition function
+Within the context of Bayesian optimization, acquisition functions serve to dictate the next query points within the search space by interpreting the posterior predicted mean and variance as generated through the Gaussian process. Conventionally this is achieved through the exploration-exploitation trade-off, with the function aiming to leverage some quantifiable strategically to decide whether it should sample unobserved regions of the search space or draw its samples from the existing regions that produce the highest quality solutions.
 
 ![](/Images/Steps.png)
 
-* Current research: Applying Bayesian Optimization with GP to create a proxy model of computationally expensive Finite Element simulations.
-* See "Master" branch for development works. This project is currently in progress, with updates to come in the following months.
+For this example, Probability of improvement (PI) has been introduced as an acquisition function that is capable of dictating potential query points according to the probability that the given point will yield results that exceed the observed data. It is governed by the following equation;
 
+![](/Images/PI.png)
+
+Where ξ is a hyperparameter which defines the threshold to which exploration is acceptable, σ(x) and (x) provide the standard deviation and mean of the predictive function at x.
 
 ## Bayesian Optimization for structural Design
-Currently, the practise of structural optimization is significantly hindered by the computational cost of executing structural analysis simulations hundreds or even thousands of times. This provides significant potential for Bayesian optimization to significantly improve structural optimization strategies throug hsurrogate modelling.
+Currently, the practise of structural optimization is significantly hindered by the computational cost of executing structural analysis simulations hundreds or even thousands of times. This provides significant potential for Bayesian optimization to significantly improve structural optimization strategies through surrogate modelling.
 
-In order to demonstrate this application, a simple parametric finite element simulation has been created through the finite element software ABAQUS. As most commercial finite element pckages have a scripting interface, the creation of Bayesian-driven parametric models is significant and yet to be fully realized. 
+In order to demonstrate this application, a simple parametric finite element simulation has been created through the finite element software ABAQUS. As most commercial finite element packages have a scripting interface, the creation of Bayesian-driven parametric models is significant and yet to be fully realized. 
 
 
 Parametric Master File:
+
 ```python
 from part import *
 from material import *
@@ -701,3 +710,6 @@ mdb.jobs['TBEAM'].submit(consistencyChecking=OFF)
 ![](/Images/T1.png)
 
 ![](/Images/T2.png)
+
+* Current research: Applying Bayesian Optimization with GP to create a proxy model of computationally expensive Finite Element simulations.
+* See "Master" branch for development works. This project is currently in progress, with updates to come in the following months.
