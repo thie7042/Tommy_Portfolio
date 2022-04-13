@@ -58,14 +58,23 @@ In order to mobilise the adoption of FOS sensor technology within the structural
 
 
 # Bayesian Optimization with Gaussian Process 
+For complex structural problems, computer simulations such as the finite element method are used throughout the practice of structural engineering to solve mathematical calculations which are too complex and intensive to be solved by hand. These simulations are often computationally expensive, drastically hindering the efficiency of optimization techniques that require accurate and comprehensive structural analysis. For these applications, surrogate models offer a potentially robust solution, by serving as a meta-model for the required simulation. If a sufficient quantity of high-quality data is available, a well-fitted surrogate model may be used to substitute for the finite element method, potentially improving the computational efficiency of structural optimization by orders of magnitude. 
+
+Surrogates must satisfy four distinct criteria in order to justify their implementation. Namely, a surrogate model must: 
+* leverage a sufficiently representative sample from the target function to create the predictive distribution  f(x') . The mean as calculated by the acquisition function may then be used as a proxy model for f(x') at newly optimized locations x'. The variance at these points as calculated by the acquisition function provides estimated measurements of the model uncertainty at x', which informs the exploration-exploitation trade-off
+* include the capacity to interpolate intermediary data for cases in which the desired computer simulation f is deterministic 
+* provide outputs analogous in accuracy and type to f for optimization
+* consist of a fitting process (f) and prediction capabilities f(x') which are collectively executed faster than simply conducting f(x') with an acceptable degree of uncertainty. This is especially important, as the justification of surrogate modelling is predicated on the assumption that the strategy will improve computational efficiency. 
 
 ## Context: Locating the maxima
+In order to introduce the process of Bayesian Optimization, I have created a simple visualisation of the process as applied to a one-dimensional problem.
+Within this context, the target function which we are attempting to replicate is f(x) = x/5 + sin(x). The optimal solution which we are attempting to derive is marked in red on the plot. 
 
 ![](/Images/Target_Function.png)
 
-
 ## Context: Building the covariance matrix
-
+The covariance matrix Σ provides information regarding the variance 2 of each random variable, constructing the diagonal entries of the matrix, and the covariance between random variables, provided at all non-diagonal entries. In order to visualize the covariance matrix for larger dimensions, it has been plotted in the form of 
+a relative-scale heat-map, with each block representing an entry within the matrix.
 ![](/Images/Covariance.png)
 
 ## Context: Sampling the Prior
@@ -85,6 +94,10 @@ In order to mobilise the adoption of FOS sensor technology within the structural
 
 
 ## Bayesian Optimization for structural Design
+Currently, the practise of structural optimization is significantly hindered by the computational cost of executing structural analysis simulations hundreds or even thousands of times. This provides significant potential for Bayesian optimization to significantly improve structural optimization strategies throug hsurrogate modelling.
+
+In order to demonstrate this application, a simple parametric finite element simulation has been created through the finite element software ABAQUS. As most commercial finite element pckages have a scripting interface, the creation of Bayesian-driven parametric models is significant and yet to be fully realized. 
+
 
 Parametric Master File:
 ```python
@@ -682,3 +695,5 @@ mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF,
 mdb.jobs['TBEAM'].submit(consistencyChecking=OFF)
 # Save by TommyHielscher on 2022_04_12-13.19.16; build 2021 2020_03_07-01.50.37 167380
 ```
+
+
