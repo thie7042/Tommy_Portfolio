@@ -698,7 +698,6 @@ mdb.jobs['TBEAM'].submit(consistencyChecking=OFF)
 
 ## Bayesian Optimization for structural Design
 
-
 ![](/Images/T1.png)
 
 ![](/Images/T2.png)
